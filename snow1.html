@@ -5,10 +5,21 @@
 	<title>snow</title>
 	<style>
 		*{margin: 0;padding: 0;box-sizing: border-box;}
-		.snow{width: 10px;height: 10px;border-radius: 50%;background: #fff;position: absolute;}
+		body,html{background: #000; overflow:hidden;}
+		.snow{width: 10px;height: 10px;border-radius: 50%;background: #fff;position: absolute;left:0 auto; top:-10px;}
 	</style>
 </head>
 <body>
 	
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		window.onload = function(){
+			setInterval(function(){
+				num = Math.floor(Math.random()*4500)+9500;
+				w = Math.floor(Math.random() * ($('body').width()*0.84) );
+				$('body').prepend($('<div class="snow" style="left:'+w+'px"></div>').animate({top:"100%", left:Number(w+250)+"px"},num));
+			},200);
+		};
+	</script>
 </body>
 </html>
