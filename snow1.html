@@ -17,8 +17,10 @@
 			setInterval(function(){
 				num = Math.floor(Math.random()*4500)+9500;
 				w = Math.floor(Math.random() * ($('body').width()*0.84) );
-				$('body').prepend($('<div class="snow" style="left:'+w+'px"></div>').animate({top:"100%", left:Number(w+250)+"px"},num));
-			},200);
+				$('body').prepend($('<div class="snow" style="left:'+w+'px; top:-30px;"></div>').animate({top:"100%", left:Number(w+250)+"px"},num,function(){
+					$(this).remove();
+				}));
+			},100);
 		};
 	</script>
 </body>
